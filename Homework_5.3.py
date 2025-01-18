@@ -16,16 +16,13 @@ import string
 
 
 def hashtag_converter(input_string):
-    cleaned_string = input_string.translate(str.maketrans('', '', string.punctuation)).split()
+    list_of_the_cleaned_strings = input_string.translate(str.maketrans('', '', string.punctuation)).split()
 
-    capitalized_words = [word.capitalize() for word in cleaned_string]
+    capitalized_words = [word.capitalize() for word in list_of_the_cleaned_strings]
 
     hashtag_string = "#" + "".join(capitalized_words)
 
-    if len(hashtag_string) > 140:
-        hashtag_string = hashtag_string[:140]
-
-    return hashtag_string
+    return hashtag_string[:140]
 
 
 examples_strings = [
